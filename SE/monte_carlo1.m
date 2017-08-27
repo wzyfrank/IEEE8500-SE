@@ -13,9 +13,9 @@ Sub_measure = 1e-3 * [
 
 Sub_measure = Sub_measure .* (1 + 1e-3 * randn(3, 1));
 tic();
-iter_num = 200;
+iter_num = 12;
 error_vec = zeros(iter_num, 4);
-parpool(2);
+parpool(4);
 
 parfor k = 1:iter_num
     %disp(k);

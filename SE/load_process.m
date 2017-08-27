@@ -1,8 +1,8 @@
 function load_perturbed = load_process()
 
 loads = load('loads.mat');
-loads = 1e-6 * loads.loads;
-loads = transpose(loads);
+loads = loads.loads;
+loads = 1e-3 * transpose(loads);
 
 len = length(loads);
 load_perturbed = zeros(len, 1);
@@ -20,3 +20,5 @@ for i = 1:len
     end
     load_perturbed(i) = loads(i) * (1 + sigma_load * randn(1, 1));
 end
+
+load_perturbed = load_perturbed * 1e-3;
